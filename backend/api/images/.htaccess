@@ -1,0 +1,51 @@
+# .htaccess für das images Verzeichnis
+# Erlaubt den Zugriff auf Bilder und Videos
+
+# Erlaube Zugriff auf alle Dateien in diesem Verzeichnis
+<FilesMatch "\.(jpg|jpeg|png|gif|bmp|webp|mp4|avi|mov|wmv|flv|webm)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Setze korrekte MIME-Types
+<IfModule mod_mime.c>
+    AddType image/jpeg .jpg .jpeg
+    AddType image/png .png
+    AddType image/gif .gif
+    AddType image/bmp .bmp
+    AddType image/webp .webp
+    AddType video/mp4 .mp4
+    AddType video/avi .avi
+    AddType video/quicktime .mov
+    AddType video/x-ms-wmv .wmv
+    AddType video/x-flv .flv
+    AddType video/webm .webm
+</IfModule>
+
+# Cache-Einstellungen für Bilder
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/bmp "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType video/mp4 "access plus 1 month"
+    ExpiresByType video/avi "access plus 1 month"
+    ExpiresByType video/quicktime "access plus 1 month"
+    ExpiresByType video/x-ms-wmv "access plus 1 month"
+    ExpiresByType video/x-flv "access plus 1 month"
+    ExpiresByType video/webm "access plus 1 month"
+</IfModule>
+
+# Verhindere die Ausführung von PHP-Dateien in diesem Verzeichnis
+<Files "*.php">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Verstecke .htaccess und andere sensitive Dateien
+<FilesMatch "^\.">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch> 
