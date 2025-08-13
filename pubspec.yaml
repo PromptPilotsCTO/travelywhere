@@ -1,0 +1,32 @@
+name: travelywhere
+description: A new Flutter project.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_map: ^8.1.1
+  latlong2: ^0.9.1
+  cupertino_icons: ^1.0.2
+  http: ^1.2.1
+  image_picker: ^0.8.4+4
+  intl: ^0.19.0
+  shared_preferences: ^2.0.13
+  geolocator: ^8.2.0
+  google_maps_flutter: ^2.1.1
+  photo_view: ^0.14.0 # Für die Bildergalerie hinzugefügt
+  audioplayers: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/
+    - assets/icons/vw_bus.png
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware

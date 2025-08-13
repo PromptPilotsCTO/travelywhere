@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "travelywhere_app",
+			"path": "."
+		},
+		{
+			"name": "public_html",
+			"path": "../../hostinger/travelywhere.com/public_html"
+		}
+	],
+	"settings": {}
+}
